@@ -27,3 +27,4 @@ Starting at the middle floor and drop the egg
         we move to upper half
         recall until it doesn't break.
 
+runtime complexity = O(log(n)) because binary searches are O(log(n))
