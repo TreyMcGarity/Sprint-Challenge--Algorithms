@@ -99,11 +99,8 @@ class SortingRobot:
         # Go until sorted
         while True:
             # traverse right
-            while True:
-                # if it can't
-                if self.can_move_right() == False:
-                    break               
-                # swap iems
+            while self.can_move_right() == True:               
+                # swap items
                 self.swap_item()
                 # If the next item is bigger, swap again
                 self.move_right()
@@ -113,12 +110,11 @@ class SortingRobot:
                 if self.can_move_right() == False:
                     self.swap_item()
                     break
-            # if robot not carrying anything and is all the way to right
+            # if robot not carrying anything and is all the way to right, break
             if self.compare_item() == None and self.can_move_right() == False: 
-                # break out of loop
                 break
             # traverse left
-            while True:
+            while self.can_move_left() == True:
                 self.move_left()
                 # swap smallest item to first
                 if self.compare_item() == None:
